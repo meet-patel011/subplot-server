@@ -57,9 +57,14 @@ function isMovieStreamingNews(article) {
   
   // EXCLUDE these topics
   const excludeKeywords = [
-    "politics", "election", "trump", "biden", "war", "military",
-    "crime", "murder", "sports", "football", "basketball", "concert",
-    "music", "album", "song", "tour"
+    "election",
+    "crime",
+    "politics",
+    "trump",
+    "election",
+    "murder",
+    "football",
+    "basketball"
   ];
   
   const hasExcluded = excludeKeywords.some(keyword => text.includes(keyword));
@@ -124,7 +129,7 @@ export const getLatestNews = async (req, res, next) => {
     if (cachedNews && cacheTimestamp && (now - cacheTimestamp < CACHE_TTL)) {
       const cacheAge = Math.floor((now - cacheTimestamp) / (60 * 60 * 1000));
       console.log(`📰 Serving from cache (${cacheAge}h old, refreshes in ${10 - cacheAge}h)`);
-      
+
       return res.json({
         success: true,
         source: "cache",
@@ -148,13 +153,16 @@ export const getLatestNews = async (req, res, next) => {
       throw new Error("No articles fetched from API");
     }
     
-    // FILTER FOR MOVIE/STREAMING 
-    const relevantArticles = allArticles.filter(isMovieStreamingNews);
-    console.log(` Relevant movie/streaming articles: ${relevantArticles.length}`);
-    
+    // FILTER FOR MOVIE/STREAMING (FAIL-SAFE)
+    let relevantArticles = allArticles.filter(isMovieStreamingNews);
+    console.log(`Relevant movie/streaming articles: ${relevantArticles.length}`);
+
+    // If filters remove everything, fallback gracefully
     if (relevantArticles.length === 0) {
-      throw new Error("No relevant articles after filtering");
+      console.warn("No articles matched filters — falling back to unfiltered results");
+      relevantArticles = allArticles;
     }
+
     
     // REMOVE DUPLICATES
     const uniqueArticles = removeDuplicates(relevantArticles);

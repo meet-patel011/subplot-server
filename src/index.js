@@ -29,6 +29,7 @@ app.use(express.urlencoded({ extended: true, limit: "5mb" }));
 app.use(cookieParser());
 app.use(cors({
   origin: [
+    "https://thesubplot.netlify.app",
     "http://127.0.0.1:5501",
     "http://localhost:5501"
   ],
@@ -82,7 +83,7 @@ app.use((req, res) => {
 
 // ERROR HANDLER
 app.use((err, req, res, next) => {
-  console.error("❌ Error:", err.message);
+  console.error("Error:", err.message);
   console.error(err.stack);
   
   res.status(err.statusCode || 500).json({

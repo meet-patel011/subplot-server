@@ -88,3 +88,33 @@ export const removeFromWatchlist = async (req, res, next) => {
     next(error);
   }
 };
+
+// New code
+export const getPosterFallback = async (req, res, next) => {
+  try {
+    const { mediaType, tmdbId } = req.params;
+
+    if (!tmdbId || !mediaType) {
+      return res.json({ posterUrl: null });
+    }
+
+    const endpoint = mediaType === "movie" ? "movie" : "tv";
+
+    const response = await fetch(
+      `https://api.themoviedb.org/3/${endpoint}/${tmdbId}?api_key=${process.env.TMDB_API_KEY}`
+    );
+
+    if (!response.ok) {
+      return res.json({ posterUrl: null });
+    }
+
+    const data = await response.json();
+    const posterUrl = data.poster_path
+      ? `https://image.tmdb.org/t/p/w500${data.poster_path}`
+      : null;
+
+    res.json({ posterUrl });
+  } catch (error) {
+    res.json({ posterUrl: null });
+  }
+};

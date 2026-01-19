@@ -3,6 +3,7 @@ import {
   addToWatchlist,
   getWatchlist,
   removeFromWatchlist,
+  getPosterFallback,
 } from "../controllers/watchlist.controller.js";
 import protect from "../middlewares/auth.middleware.js";
 
@@ -13,6 +14,7 @@ const router = express.Router();
 router.post("/", protect, addToWatchlist);
 router.get("/", protect, getWatchlist);
 router.delete("/:mediaType/:tmdbId", protect, removeFromWatchlist);
+router.get("/:mediaType/:tmdbId/poster", protect, getPosterFallback);
 
 
 export default router;

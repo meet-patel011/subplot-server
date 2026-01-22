@@ -42,21 +42,6 @@ export const trending = async () => {
   return data;
 };
 
-export const trendingPeople = async () => {
-  const key = "trending:people";
-  const cached = getCache(key, 6 * 60 * 60 * 1000);
-  if (cached) return cached;
-
-  const { data } = await axios.get(`${TMDB}/trending/person/week`, {
-    params: { api_key: getKey() }
-  });
-
-  setCache(key, data);
-  return data;
-};
-
-
-
 // NEWLY RELEASE
 export const upcoming = async () => {
   const key = "upcoming:filtered";

@@ -96,12 +96,6 @@ export const discoverTV = async (req, res, next) => {
   } catch (e) { next(e); }
 };
 
-export const getTrendingPeople = async (req, res, next) => {
-  try {
-    res.json(await tmdbService.trendingPeople());
-  } catch (e) {
-    next(e);
-  }
-};
+
 
 

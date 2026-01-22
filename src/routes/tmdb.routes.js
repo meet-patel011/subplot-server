@@ -15,14 +15,12 @@ import {
   getByGenre,
   getCollection,
   discoverMovie,
-  discoverTV,
-  getTrendingPeople, 
+  discoverTV, 
 } from "../controllers/tmdb.controller.js";
 
 const router = express.Router();
 
 router.get("/trending", getTrending);
-router.get("/trending-people", getTrendingPeople);
 router.get("/upcoming", getUpcoming);
 router.get("/provider/:id", getByProvider);
 router.get("/bollywood", getBollywood);

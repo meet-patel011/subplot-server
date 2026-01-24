@@ -7,6 +7,7 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import connectDB from "./db/connect.js";
+import featuredTrailersRoutes from "./routes/featuredTrailers.routes.js";
 import tmdbRoutes from "./routes/tmdb.routes.js";
 import testRoutes from "./routes/test.routes.js";
 import editorsRoutes from "./routes/editors.routes.js";
@@ -65,6 +66,7 @@ app.get("/health", (req, res) => {
 app.use("/api", testRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
+app.use("/api", featuredTrailersRoutes);
 app.use("/api/watchlist", watchlistRoutes);
 app.use("/api/reviews", reviewRoutes);
 app.use("/api/posts", postRoutes);

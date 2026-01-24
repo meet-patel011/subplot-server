@@ -315,5 +315,3 @@ export const discoverTV = async (query) => {
   return data;
 };
 
-
-

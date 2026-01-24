@@ -2,35 +2,26 @@ import mongoose from "mongoose";
 
 const postSchema = new mongoose.Schema(
   {
+    club: {
+      type: String,
+      required: true,
+      index: true
+    },
+
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true,
+      required: true
     },
 
     content: {
       type: String,
       required: true,
       trim: true,
-      maxlength: 1000,
-    },
-
-    media: {
-      type: String, // image/video URL
-    },
-
-    likes: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-      },
-    ],
+      maxlength: 1000
+    }
   },
   { timestamps: true }
 );
 
-const Post =
-  mongoose.models.Post || mongoose.model("Post", postSchema);
-
-export default Post;
-
+export default mongoose.model("Post", postSchema);

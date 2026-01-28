@@ -39,18 +39,21 @@ export const createClubPost = async (req, res) => {
 
 export const likePost = async (req, res) => {
   const { postId } = req.params;
-  const userId = req.user._id;
+  const userId = req.user?._id; // may be undefined
 
   const post = await Post.findById(postId);
   if (!post) return res.status(404).json({ message: "Post not found" });
 
-  if (post.likedBy.includes(userId)) {
-    return res.status(400).json({ message: "Already liked" });
+  if (userId) {
+    if (post.likedBy.includes(userId)) {
+      return res.status(400).json({ message: "Already liked" });
+    }
+    post.likedBy.push(userId);
   }
 
   post.likes += 1;
-  post.likedBy.push(userId);
   await post.save();
 
   res.json({ likes: post.likes });
 };
+

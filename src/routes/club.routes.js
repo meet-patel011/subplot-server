@@ -14,6 +14,6 @@ router.get("/:club", getClubPosts);
 /* PROTECTED */
 router.post("/:club", protect, createClubPost);
 
-router.post("/:club/like/:postId", protect, likePost);
+router.post("/:club/like/:postId", likePost);
 
 export default router;

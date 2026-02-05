@@ -1,5 +1,25 @@
 [
   {
+    "title": "Monarch S-2",
+    "description": "Official Trailer",
+    "youtubeUrl": "https://youtu.be/ZgWrFoaisdk?si=OhzBMJ6Hgo9OHD4p"
+  },
+  {
+    "title": "Assi",
+    "description": "Official Trailer",
+    "youtubeUrl": "https://youtu.be/_fTMb1olDQY?si=fp1QeYzsf4D-Z1K0"
+  },  
+  {
+    "title": "Crime 101",
+    "description": "Official Trailer 2",
+    "youtubeUrl": "https://youtu.be/uEVNkF1Cbck?si=MCfb6ZBAv-5MNu8s"
+  },  
+  {
+    "title": "Do Deewane Sheher Mein",
+    "description": "Official Trailer",
+    "youtubeUrl": "https://youtu.be/UmW7El0TrV4?si=uKpyl7vPqDkdfqZ5"
+  },
+  {
     "title": "Dhurandhar 2",
     "description": "Official Teaser",
     "youtubeUrl": "https://youtu.be/CN0lNff-zm0?si=3MfcSUksJ7F_MjrH"
@@ -13,27 +33,12 @@
     "title": "Michael",
     "description": "Official Trailer",
     "youtubeUrl": "https://youtu.be/3zOLzsbOleM?si=qwJCHmx2fyy5LYS7"
-  },      
-  {
-    "title": "Lagan Laagii Re",
-    "description": "Official Trailer",
-    "youtubeUrl": "https://youtu.be/Nmmfm_J2Q98?si=UopQWQFIRT013lqn"
-  },   
+  },        
   {
     "title": "Mardaani 3",
     "description": "Official Trailer",
     "youtubeUrl": "https://youtu.be/V4TJKSEftkU?si=PtPnJ7z0ZeKKJTVX"
-  },   
-  {
-    "title": "Toxic",
-    "description": "Official Teaser",
-    "youtubeUrl": "https://youtu.be/aF08WVSvCok?si=hm_4qMo2pM-hHYIK"
-  },  
-  {
-    "title": "Gandhi Talks",
-    "description": "Official Trailer",
-    "youtubeUrl": "https://youtu.be/rph2F0uX-A0?si=7vFkISJRhKcCQAwi"
-  }, 
+  },    
   {
     "title": "Daredevil: Born Again S-2",
     "description": "Teaser Trailer",
@@ -43,12 +48,7 @@
     "title": "Forza Horizon 6",
     "description": "Gameplay Teaser Trailer",
     "youtubeUrl": "https://youtu.be/-5rTTbO4WWw?si=f_UU0FgJh4s5iI1s"
-  },   
-  {
-    "title": "Ranabaali",
-    "description": "Title Glimpse",
-    "youtubeUrl": "https://youtu.be/9Ik0Y8Pr3l0?si=87JI7KBAxWU0t9m6"
-  },  
+  },    
   {
     "title": "Vadh 2",
     "description": "Official Trailer",
@@ -59,11 +59,6 @@
     "description": "Official First Look Trailer",
     "youtubeUrl": "https://youtu.be/RdWHDXEL_ls?si=PQWfdYH2Xljiq8Ou"
   },  
-  {
-    "title": "King",
-    "description": "Date Announcement",
-    "youtubeUrl": "https://youtu.be/M3mfut2RdHk?si=b3OPNn2Mq1WgjNbo"
-  },
   {
     "title": "Masters of The Universe",
     "description": "Official Teaser Trailer",
@@ -78,10 +73,5 @@
     "title": "Invincible 4",
     "description": "Official Trailer",
     "youtubeUrl": "https://youtu.be/yghHNrXBx08?si=rmBxgjEemEhjrhNZ"
-  },
-  {
-    "title": "Tu Yaa Main",
-    "description": "Official Trailer",
-    "youtubeUrl": "https://youtu.be/Js8oSyfvtug?si=dKRIFQKWGliR0ygC"
   }
 ]
